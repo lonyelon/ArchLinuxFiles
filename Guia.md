@@ -1,6 +1,42 @@
 # Guía de instalación
 ## Instalación del sistema
+```bash
+loadkeys es
+```
 ### Particionamiento
+Primero vamos a mirar la lista de discos y particiones del PC:
+```bash
+fdisk -l
+```
+
+Podemos particionar el sistema usando una de las siguientes herramientas. Véase que hay que proporcionar el disco a particionar, por ejemplo `/dev/sda`. Repetimos este proceso para todos los discos. Crearemos cuatro particiones, una de al menos 50GB para `/`, otra de 8GGB para `swap`, otra de `512MB` para `boot` y una última con todo el espacio que podamos para `home`. 
+```bash
+cfdisk [DISCO]
+fdisk [DISCO]
+```
+
+Luego formateamos las particiones recién creadas con `mkfs`. Yo elijo normalmente separar `boot` y `home` de `/`. Todas las particiones contendrán sistemas `ext4` excepto por `boot`, que será de tipo `ext2`.
+```bash
+mkfs.ext4 /dev/sd[LETRA de home][NUMERO de home]
+mkfs.ext4 /dev/sd[LETRA de /][NUMERO de /]
+mkfs.ext4 /dev/sd[LETRA de boot][NUMERO de boot]
+mkswap /dev/sd[LETRA de swap][NUMERO de swap]
+```
+
+Activamos el área de intercambio.
+```bash
+swapon /dev/sd[LETRA de swap][NUMERO de swap]
+```
+
+Y montamos las particiones creadas.
+```bash
+mount /dev/sd[LETRA de /][NUMERO de /] /mnt
+mkdir /mnt/home
+mkdir /mnt/boot
+mount /dev/sd[LETRA de home][NUMERO de home] /mnt
+mount /dev/sd[LETRA de boot][NUMERO de boot] /mnt
+```
+
 ### Instalación de Linux
 ```bash
 pacstrap /mnt base base-devel linux linux-config
