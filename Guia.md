@@ -17,24 +17,24 @@ fdisk [DISCO]
 
 Luego formateamos las particiones recién creadas con `mkfs`. Yo elijo normalmente separar `boot` y `home` de `/`. Todas las particiones contendrán sistemas `ext4` excepto por `boot`, que será de tipo `ext2`.
 ```bash
-mkfs.ext4 /dev/sd[LETRA de home][NUMERO de home]
-mkfs.ext4 /dev/sd[LETRA de /][NUMERO de /]
-mkfs.ext4 /dev/sd[LETRA de boot][NUMERO de boot]
-mkswap /dev/sd[LETRA de swap][NUMERO de swap]
+mkfs.ext4 [Partición /]
+mkfs.ext4 [Partición home]
+mkfs.ext2 [Partición boot]
+mkswap [Partición swap]
 ```
 
 Activamos el área de intercambio.
 ```bash
-swapon /dev/sd[LETRA de swap][NUMERO de swap]
+swapon [Partición swap]
 ```
 
 Y montamos las particiones creadas.
 ```bash
-mount /dev/sd[LETRA de /][NUMERO de /] /mnt
+mount [Partición /] /mnt
 mkdir /mnt/home
 mkdir /mnt/boot
-mount /dev/sd[LETRA de home][NUMERO de home] /mnt
-mount /dev/sd[LETRA de boot][NUMERO de boot] /mnt
+mount [Partición home] /mnt
+mount [Partición boot] /mnt
 ```
 
 ### Instalación de Linux
@@ -64,8 +64,8 @@ mkinitcpio -P
 ```
 
 ```bash
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-grub-install --target=i386-pc /dev/sd[letra]
+grub-install --target=x86_64-efi --efi-directory=/boot/grub/efi --bootloader-id=GRUB
+grub-install --target=i386-pc [Partición boot]
 ```
 
 ```bash
