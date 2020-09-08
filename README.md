@@ -2,12 +2,12 @@
 <img src="https://www.archlinux.org/static/logos/archlinux-logo-dark-90dpi.ebdee92a15b3.png"></img>
 
 En la siguiente guía pretendo anotar el proceso completo de instalación de Arch Linux que he ido perfeccionando con el paso de los años. No es la mejor forma ni la más rápida, pero es la manera que deja el sistema tal y como *yo* quiero. Este repositorio actúa entonces como un bloc de notas personal más que como una guía de instalación. Si alguien quiere personalizar mucho más el sistema de lo que aquí se enseña o aprender a instalarlo por primera vez, lo mejor es siempre consultar la <a href="https://wiki.archlinux.org/index.php/Installation_guide"> guía de instalación oficial </a>.
-## Instalación del sistema
+## 1. Instalación del sistema
 El primer paso es siempre poner el teclado en español por comodidad (esto sólo cambia el mapa de teclas durante la instalación):
 ```bash
 loadkeys es
 ```
-### Particionamiento
+### 1.1. Particionamiento
 Antes de particionar vamos a mirar la lista de discos y particiones del PC:
 ```bash
 fdisk -l
@@ -41,7 +41,7 @@ mount [Partición home] /mnt/home
 mount [Partición boot] /mnt/boot
 ```
 
-### Instalación de Linux
+### 1.2. Instalación de Linux
 Empleamos `pacstrap` para instalar los paquetes básicos del sistema. `xf86-video-?` se refiere a los drivers de video. Si se tiene una gráfica de AMD habrá que emplear `xf86-video-amdgpu`, para nvidia `xf86-video-nouveau` (o `nvidia` y `nvidia-utils` para los drivers propietarios) y para intel `xf86-video-intel`.
 ```bash
 pacstrap /mnt base base-devel linux linux-config
@@ -50,7 +50,7 @@ pacstrap /mnt mesa mesa-demos xf86-video-? xf86-input-synaptics
 pacstrap /mnt nvim sudo grub networkmanager
 ```
 
-### Configuración del sistema    
+### 1.3. Configuración del sistema    
 Entramos al sistema recién instalado.
 ```bash
 arch-chroot /mnt    
@@ -97,7 +97,7 @@ umount -R /mnt
 reboot
 ```
 
-#### Una última cosa...
+#### 1.3.1. Una última cosa...
 
 Tras el reinicio activamos el servicio de `NetworkManager`. Si vamos a emplear WiFi, tendremos el comando `nmtui` que nos permitirá elegir la red y poner la contraseña de forma fácil.
 ```bash
@@ -113,7 +113,7 @@ cd yay
 makepkg -si
 ```
 
-## Instalación del entorno de escritorio
+## 2. Instalación del entorno de escritorio
 
 Instalamos el servidor de `X` y el gestor de ventanas `i3` junto con todo el software necesario: `picom` para el compositor (transparencia), `rofi` para el menú de selección de programas, `nitrogen` para poner el fondo de escritorio y `polybar` para la barra de tareas. 
 ```bash
@@ -128,46 +128,46 @@ echo "xinput --set-prop 9 \'libinput Accel Speed\' -0.5" > .xinitrc
 echo "exec i3" >> .xinitrc
 ```
 
-### Aplicaciones importantes
+### 2.1. Aplicaciones importantes
 Adjunto unas de las aplicaciones que más uso con el sistema.
 ```bash
 sudo pacman -S terminator atom ranger pass xreader
 ```
 
-### Navegadores 
+### 2.2. Navegadores 
 
 Thomas Jefferson dijo "El sistema operativo es el bootloader del navegador web". Yo recomiendo los siguientes:
 
-#### Brave
+#### 2.2.A. Brave
 ```bash
 yay -S brave-bin
 ```
 
-#### Chromium
+#### 2.2.B. Chromium
 ```bash
 sudo pacman -S chromium
 ```
 
-#### Firefox
+#### 2.2.C. Firefox
 ```bash
 sudo pacman -S firefox
 ```
 
-### Copiar archivos de configuración
+### 2.3. Copiar archivos de configuración
 En este repositorio se proporcionan dos carpetas, `config` y `fonts`. El contenido de la primera ha de copiarse a `~/.config` y el de la segunda a `~/.local/share/fonts` (si no existe se debe crearla primero con `mkdir ~/.local/share/fonts`).
 
-## Configuración final
+## 3. Configuración final
 
 El sistema ya es funcional, pero está sin configurar. Vamos a dejarlo bonito.
 
-### Crontab
+### 3.1. Crontab
 Instalamos `crontab` y escribimos la línea `@reboot pacman -Syy`. Esto hará que arch actualice la lista de paquetes cada vez que el equipo se reinicie.
 ```bash
 sudo pacman -S cronie
 sudo crontab -e
 ```
 
-### Samba
+### 3.2. Samba
 Yo tengo un servidor samba, así que dejo también la forma con la que hago que los archivos se compartan entre mis dos equipos.
 ```bash
 mkdir /home/shared
@@ -175,7 +175,7 @@ sudo echo "//[IP]/[SHAREDIR]	/home/shared  cifs  username=[UNAME],password=[PASS
 sudo mount -a
 ```
 
-### Instalar oh-my-zsh
+### 3.3. Instalar oh-my-zsh
 Yo personalmente uso `zsh` en vez de `bash`, pero empleo los temas de `oh-my-zsh`.
 ```bash
 sudo pacman -S zsh
@@ -198,7 +198,7 @@ alias vi=nvim
 [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] && startx
 ```
 
-### VPN
+### 3.4. VPN
 
 Uso una *VPN* para conectar mis dispositivos. Para hacerlo hay que instalar los siguientes paquetes:
 ```bash
