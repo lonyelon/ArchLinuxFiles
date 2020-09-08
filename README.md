@@ -171,17 +171,47 @@ sudo crontab -e
 Yo tengo un servidor samba, así que dejo también la forma con la que hago que los archivos se compartan entre mis dos equipos.
 ```bash
 mkdir /home/shared
-sudo echo "//[IP]/[SHAREDIR]	/home/shared	cifs username=[UNAME],password=[PASS],uid=[LOCALUSER],gid=[LOCALGROUP]	0	2" >> /etc/fstab
+sudo echo "//[IP]/[SHAREDIR]	/home/shared  cifs  username=[UNAME],password=[PASS],uid=[LOCALUSER],gid=[LOCALGROUP]	0	2" >> /etc/fstab
 sudo mount -a
 ```
 
 ### Instalar oh-my-zsh
+Yo personalmente uso `zsh` en vez de `bash`, pero empleo los temas de `oh-my-zsh`.
 ```bash
 sudo pacman -S zsh
 yay -S oh-my-zsh-git
 sudo usermod -s /bin/zsh [USERNAME]
+```
+
+El tema que utilizo habitualmente es *af-magic*, que se puede establecer en `.zshrc`.
+```bash
 nvim .zshrc
+```
+
+Al final del fichero también incluyo el siguiente código, que establece algunos aliases comunes y hace que cuando haga login al encender el pc, se inicie el escritorio (no empleo ningún display *manager*, pero si lo hiciera usaría `gdm`).
+```bash
+alias r=ranger
+alias top=bashtop
+alias vim=nvim
+alias vi=nvim
+
+[ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] && startx
 ```
 
 ### VPN
 
+Uso una *VPN* para conectar mis dispositivos. Para hacerlo hay que instalar los siguientes paquetes:
+```bash
+sudo pacman -S openvpn networkmanager-openvpn
+```
+
+Después se descarga el archivo *.ovpn* de nuestra *VPN*. La importamos a *NetworkManager* con:
+```bash
+nmcli con import type openvpn file [archivo ovpn]
+```
+
+Cada vez que queramos iniciar la conexión escribiremos:
+```bash
+nmcli con up [conexión]
+```
+Yo normalmente añado este comando a mi `.xinitrc` para que mi PC se conecte cada vez que lo arranco. 
