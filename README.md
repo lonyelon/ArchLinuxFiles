@@ -124,7 +124,7 @@ yay -S polybar
 
 Por último añadimos unas líneas a `.xinitrc` que dejan el ratón tal y como quiero y después arrancan el entorno de escritorio tras el comando `startx`.
 ```
-echo "xinput --set-prop 9 'libinput Accel Speed' -0.5" > .xinitrc
+echo "xinput --set-prop 9 \'libinput Accel Speed\' -0.5" > .xinitrc
 echo "exec i3" >> .xinitrc
 ```
 
