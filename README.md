@@ -113,8 +113,28 @@ yay -S polybar
 
 ### Aplicaciones importantes
 ```bash
-yay -S brave
 sudo pacman -S terminator atom ranger pass xreader
+```
+
+### Navegadores 
+
+Thomas Jefferson dijo "El sistema operativo es el bootloader del navegador web". Yo recomiendo los siguientes:
+<img src="https://brave.com/wp-content/uploads/2019/01/logotype-full-color.svg"/>
+
+```bash
+yay -S brave-bin
+```
+
+<img src="https://www.chromium.org/_/rsrc/1438879449147/config/customLogo.gif?revision=3"/>
+
+```bash
+sudo pacman -S chromium
+```
+
+<img src="https://d33wubrfki0l68.cloudfront.net/06185f059f69055733688518b798a0feb4c7f160/9f07a/images/product-identity-assets/firefox.png"/>
+
+```bash
+sudo pacman -S firefox
 ```
 
 ## Configuración final
