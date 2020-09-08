@@ -1,0 +1,7 @@
+rofi.modi:                  run,window,ssh,drun
+rofi.terminal:              terminator
+rofi.ssh-command:           {terminal} -e "{ssh-client} {host}"
+rofi.run-command:           {cmd}
+rofi.run-shell-command:     {terminal} -e "{cmd}"
+rofi.theme:                 lonyelon.rasi
+rofi.width:                 12
