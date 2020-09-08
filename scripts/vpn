@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ "$1" = "down" ]]; then
+	nmcli con down lonyelon
+else 
+	nmcli con up lonyelon
+fi
