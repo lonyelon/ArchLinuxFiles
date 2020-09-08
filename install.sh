@@ -1,3 +1,3 @@
 #!/bin/bash
 
-[ "$EUID" -ne 0 ] && echo "Please, run this as root: sudo $0" || mv scripts/* /bin/
+[ "$EUID" -ne 0 ] && echo "Por favor, ejecuta esto con root con: sudo $0" || mv scripts/* /bin/
