@@ -223,7 +223,7 @@ exec_always --no-startup-id nitrogen --set-zoom-fill ~/.config/i3/background
 exec_always --no-startup-id xrdb ~/.Xresources
 # exec_always --no-startup-id mopidy -o spotify/password=$(pass music-mopidy)
 exec_always --no-startup-id xbindkeys
-exec picom --experimental-backends --backend glx -b
+exec startpicom
 
 exec brave
 # exec feedreader
