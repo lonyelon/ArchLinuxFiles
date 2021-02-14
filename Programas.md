@@ -12,3 +12,13 @@ Programas que recomiendo tener con sus respectivas instrucciones de instalación
 
 * Visual studio code: editor de Microsoft muy personalizable. Instalación: `sudo pacman -S code`.
 * NeoVim: editor en terminal con muchas funciones. Instalación: `sudo pacman -S neovim`.
+
+## Multimedia
+
+* MPV: no he encontrado un vídeo que MPV no pueda reproducir, funciona hasta con streams de Twitch. Instalación: `sudo pacman -S mpv`.
+* VLC: es un clásico, nada que añadir. Instalación: `sudo pacman -S vlc`.
+
+## Descargas
+
+* qBittorrent: para descargar ISOs, por supuesto. Instalación: `sudo pacman -S qbittorrent`.
+* youtube-dl: para descargar vídeos de youtube. Instalación: `sudo pacman -S youtube-dl`.
