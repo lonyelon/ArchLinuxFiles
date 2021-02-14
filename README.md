@@ -44,10 +44,10 @@ mount [Partición boot] /mnt/boot
 ### 1.2. Instalación de Linux
 Empleamos `pacstrap` para instalar los paquetes básicos del sistema. `xf86-video-?` se refiere a los drivers de video. Si se tiene una gráfica de AMD habrá que emplear `xf86-video-amdgpu`, para nvidia `xf86-video-nouveau` (o `nvidia` y `nvidia-utils` para los drivers propietarios) y para intel `xf86-video-intel`.
 ```bash
-pacstrap /mnt base base-devel linux linux-config
+pacstrap /mnt base base-devel linux linux-firmware
 pacstrap /mnt os-prober wpa_supplicant
 pacstrap /mnt mesa mesa-demos xf86-video-? xf86-input-synaptics
-pacstrap /mnt nvim sudo grub networkmanager
+pacstrap /mnt neovim sudo grub networkmanager
 ```
 
 ### 1.3. Configuración del sistema    
