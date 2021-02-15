@@ -1,0 +1,31 @@
+[global_config]
+  always_on_top = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Roboto Mono 10
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      maximised = False
+      fullscreen = False
+      size = 900, 600
+      title = nvim .config/terminator/config
+      last_active_term = fa092806-fdb8-4585-9c16-dd3fdc674ae7
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = fa092806-fdb8-4585-9c16-dd3fdc674ae7
+[plugins]

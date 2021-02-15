@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/lonyelon/Documentos/ArchLinuxFiles/ConfigFiles/.mutt/.mutt'
+let g:netrw_dirhist_1='/home/lonyelon/Documentos/ArchLinuxFiles/ConfigFiles/.mutt'
+let g:netrw_dirhist_0='/home/lonyelon/Documentos/ArchLinuxFiles/ConfigFiles'
+let g:netrw_dirhist_9='/home/lonyelon/Documentos/ArchLinuxFiles/ConfigFiles/.mutt'
+let g:netrw_dirhist_8='/home/lonyelon/Documentos/ArchLinuxFiles/ConfigFiles/.mutt/.mutt'
+let g:netrw_dirhist_7='/home/lonyelon/Documentos/ArchLinuxFiles/ConfigFiles/.mutt'
+let g:netrw_dirhist_6='/home/lonyelon/Documentos/ArchLinuxFiles/ConfigFiles'
+let g:netrw_dirhist_5='/home/lonyelon/Documentos/ArchLinuxFiles'
+let g:netrw_dirhist_4='/home/lonyelon'
+let g:netrw_dirhist_3='/home/lonyelon/Documentos/libro'

@@ -91,7 +91,7 @@ bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures
 bindsym Control+Print exec gnome-screenshot -i
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+s exec screengrab
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -223,7 +223,7 @@ exec_always --no-startup-id nitrogen --set-zoom-fill ~/.config/i3/background
 exec_always --no-startup-id xrdb ~/.Xresources
 # exec_always --no-startup-id mopidy -o spotify/password=$(pass music-mopidy)
 exec_always --no-startup-id xbindkeys
-exec startpicom
+exec picom --experimental-backends --backend glx -b
 
 exec brave
 # exec feedreader
