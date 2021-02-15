@@ -1,0 +1,23 @@
+# Lonyelon's alias file
+
+# Software
+alias r=ranger
+alias top=bashtop
+alias pc=pacman
+alias ytdl=youtube-dl
+alias b=librewolf
+alias m=neomutt
+alias mutt=neomutt
+
+# Git
+alias gadd="git add"
+alias gc="git commit -m"
+alias gp="git push"
+
+# Everything is NeoVim
+alias gedit=nvim
+alias nano=nvim
+alias vim=nvim
+alias vi=nvim
+alias emacs=nvim
+alias nvim=nvim
