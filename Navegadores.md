@@ -16,4 +16,5 @@ En este fichero se describe en detalle cómo configuro mis navegadores.
   ```
 
 ## Brave
-Ya haré esta lista pero básicamente: poner el tema oscuro, desactivar *Brave rewards* y el cliente torrent, instalar y configurar uBlock... etc.
+
+Ya haré esta lista pero básicamente: poner el tema oscuro, desactivar *Brave rewards* y el cliente torrent, instalar y configurar *uBlock Origin*... etc.
