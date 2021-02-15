@@ -3,7 +3,7 @@
 
 En la siguiente guía pretendo anotar el proceso completo de instalación de Arch Linux que he ido perfeccionando con el paso de los años. No es la mejor forma ni la más rápida, pero es la manera que deja el sistema tal y como *yo* quiero. Este repositorio actúa entonces como un bloc de notas personal más que como una guía de instalación. Si alguien quiere personalizar mucho más el sistema de lo que aquí se enseña o aprender a instalarlo por primera vez, lo mejor es siempre consultar la <a href="https://wiki.archlinux.org/index.php/Installation_guide"> guía de instalación oficial </a>.
 
-Dejo en <a href="./Programas.md">este archivo</a> una lista de programas útiles que uso habitualmente.
+Dejo en este repositorio una <a href="./Programas.md">lista de programas útiles que uso habitualmente</a>. También un <a href="./Navegadores.md">tutorial con la configuración habitual que uso en mis navegadores</a>.
 
 ## 1. Instalación del sistema
 El primer paso es siempre poner el teclado en español por comodidad (esto sólo cambia el mapa de teclas durante la instalación):
