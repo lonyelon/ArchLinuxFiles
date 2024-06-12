@@ -1,3 +1,7 @@
+# AVISO
+
+Hace ya un tiempo que me he movido a NixOS, por lo que esta guía está anticuada.
+
 # Guía de instalación
 <img src="https://www.archlinux.org/static/logos/archlinux-logo-dark-90dpi.ebdee92a15b3.png"></img>
 
